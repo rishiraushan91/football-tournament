@@ -225,3 +225,11 @@ docker-microservices rishi.raushan$ docker images
 REPOSITORY                                           TAG                 IMAGE ID            CREATED              SIZE
 football-tournament                                  latest              fbef99ac8cd9        About a minute ago   258MB
 ```
+
+## Automation deployment API Test
+The above API is automated through Spring Boot start test.
+This is Test Driven Development with the help of @SpringBootTest & @AutoConfigureMockMvc.
+Go to https://github.com/rishiraushan91/football-tournament/blob/master/src/test/java/com/football/tournament/FootballTournamentIntegrationTest.java
+
+and run the happy test testFootballTournamentAllLayer() and negative test with testFootballTournamentAllLayerCountryNotFound()
+with custom input
