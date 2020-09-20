@@ -1,13 +1,13 @@
-#Football Tournament
+# Football Tournament
 
-##Business Overview
+## Business Overview
 ```
 The main aim of this project is to develop, test and deploy a microservices which will 
 finds the standings of a team playing in league football match tournament using country name, 
 league name & team name.
 ```
 
-###Technical Overview
+### Technical Overview
 ```
 This is a spring boot based Microservices Java application which will create a jar and 
 run as a standlaone application or run as docker container application or run on EC2 instance.
@@ -15,7 +15,7 @@ and find the standings of a team playing in league football match tournament usi
 league name & team name. 
 ```
 
-###API Docs
+### API Docs
 Api to use
 ```
 Request Method: Get
@@ -57,7 +57,7 @@ Body = {
        }
 ```
 
-###Logic behind the API
+### Logic behind the API
 To find the standings of a team playing in league football match tournament using country name, 
 league name & team name.
 There are following methods follows:
@@ -147,8 +147,8 @@ https://apiv2.apifootball.com/?action=get_standings&league_id=149&APIkey=9bb6618
 ]
 ```
 
-##How to run
-##Run using jar
+## How to run
+## Run using jar
 ```
 ./gradlew clean build
 java -jar build/libs/football-tournament-0.0.1-SNAPSHOT.jar --server.port=48080 
@@ -182,7 +182,7 @@ e.x:-
 http://localhost:48080/football-tournament/standings/league/Championship/country/England/team/Luton?APIkey=9bb66184e0c8145384fd2cc0f7b914ada57b4e8fd2e4d6d586adcc27c257a978
 ```
 
-##Run using docker container
+## Run using docker container
 ```
 ./gradlew clean build
 cp build/libs/football-tournament-0.0.1-SNAPSHOT.jar docker/baseImage/
@@ -219,7 +219,7 @@ e.x:-
 http://localhost:48080/football-tournament/standings/league/Championship/country/England/team/Luton?APIkey=9bb66184e0c8145384fd2cc0f7b914ada57b4e8fd2e4d6d586adcc27c257a978
 ```
 
-##docker images
+## docker images
 ```
 docker-microservices rishi.raushan$ docker images
 REPOSITORY                                           TAG                 IMAGE ID            CREATED              SIZE
