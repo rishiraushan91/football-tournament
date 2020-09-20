@@ -1,0 +1,30 @@
+version: "2.1"
+
+services:
+
+  localstack:
+    container_name: "localstack"
+    image: localstack/localstack
+    mem_limit: 1024m
+    ports:
+      - ${LOCALSTACK_S3_PORT:-4572}:4572
+      - ${LOCALSTACK_SQS_PORT:-4576}:4576
+      - ${LOCALSTACK_SNS_PORT:-4575}:4575
+    environment:
+      - HOSTNAME=localstack
+      - HOSTNAME_EXTERNAL=localstack
+      - SERVICES=s3,sqs,sns
+      - DATA_DIR=/tmp/localstack/data
+      - DEFAULT_REGION=eu-west-1
+      - AWS_ACCESS_KEY_ID=local
+      - AWS_SECRET_ACCESS_KEY=local
+      - AWS_CBOR_DISABLE=true
+    healthcheck:
+      test: [ "CMD-SHELL", "curl -v http://localhost:4572" ]
+      interval: 10s
+      timeout: 30s
+      retries: 3
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /tmp/localstack:/tmp/localstack
+

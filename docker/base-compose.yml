@@ -1,0 +1,18 @@
+version: "2.1"
+
+services:
+  football-tournament:
+    container_name: "football-tournament"
+    build:
+      context: baseImage
+      dockerfile: Dockerfile
+    image: "football-tournament"
+    mem_limit: 1024m
+    ports:
+      - ${SERVICE_PORT:-48080}:8080
+    environment:
+      - SPRING_PROFILES_ACTIVE=local
+      - AWS_REGION=local
+      - AWS_ACCESS_KEY=local
+      - AWS_SECRET_ACCESS_KEY=local
+      - ENVIRONMENT=local
